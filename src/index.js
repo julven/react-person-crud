@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { reduxListContext, reduxListStore } from './components/reduxList';
+import { reduxAccountContext, reduxAccountStore } from './components/reduxAccount';
+import { GlobalProvider } from './components/GlobalProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+    <Provider store={reduxListStore} context={reduxListContext}>
+      <Provider store={reduxAccountStore} context={reduxAccountContext}>
+        <GlobalProvider>
+          <HashRouter>
+            <App />
+          </HashRouter>
+        </GlobalProvider>
+      </Provider>
+    </Provider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
