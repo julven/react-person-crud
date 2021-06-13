@@ -68,21 +68,21 @@ const Form = ({type, accountState, accountSetter, listState, listSetter, success
     }
 
     useEffect( () => {
-        console.log("form")
+        // console.log("form")
         // console.log({success})
         if(success) setViewImage("")
     }, [success])
 
     useEffect( () => {
         // console.log(form)
-        console.log("form")
+        // console.log("form")
     }, [form])
 
     useEffect( () => {
         if(type==="account" || type==="signup") setForm(accountState.form) 
         if(type==="add" || type==="edit") setForm(listState.view)
     //    console.log("test")
-        console.log("form")
+        // console.log("form")
     }, [accountState.form, listState.view])
 
     return (
@@ -113,7 +113,7 @@ const Form = ({type, accountState, accountSetter, listState, listSetter, success
                 </div>
                 <div style={{ maxWidth: 300 }} className="d-flex justify-content-center">
                     <button 
-                    onClick={() => console.log(imgInput.current.click())}
+                    onClick={() => imgInput.current.click()}
                     className="btn btn-outline-primary my-2" 
                     style={{ width: 150 }}>
                     { type==="account" || type=="edit" ? "Change" : "Upload" }

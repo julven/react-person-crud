@@ -37,7 +37,7 @@ const PersonAdd = ({history, listSetter, listState, accountSetter}) => {
             return
         }
 
-        console.log(form)
+        // console.log(form)
 
         context.server('personwrite', form).then( resp => {
             if(resp.status) {

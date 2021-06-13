@@ -40,6 +40,10 @@ const ListTable = (props) => {
                 listSetter.listSetPage(resp.page)
                 return
             }
+            if (!resp.status) {
+                listSetter.listSet([])
+                return
+            }
         })
 
     }
@@ -47,7 +51,7 @@ const ListTable = (props) => {
     let deleting = id => {
         let conf = window.confirm("confirm delete this person with id "+id+"?")
         if(conf) {
-            console.log({id})
+            // console.log({id})
             context.server('persondelete', {id}).then(resp => {
                 if(resp.status) {
                     context.timeouts(parent.setSuccess, {value: false, msg: ""})
@@ -73,13 +77,13 @@ const ListTable = (props) => {
     }
 
     useEffect(() => {
-        if(params.page) console.log({current: params.page})
-        console.log("list table")
+        // if(params.page) console.log({current: params.page})
+        // console.log("list table")
     }, [params.page])
 
     useEffect(() => {
         // console.log(listState.page)
-        console.log("list table")
+        // console.log("list table")
     }, [listState.page])
 
     useEffect(() => {

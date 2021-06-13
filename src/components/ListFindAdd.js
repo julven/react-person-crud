@@ -33,7 +33,7 @@ const ListFindAdd = ({ history, listSetter, listState }) => {
 
     useEffect( () => {
         // console.log(listState.search)
-        console.log("list find add")
+        // console.log("list find add")
     }, [listState.search])
 
     return (

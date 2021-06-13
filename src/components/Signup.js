@@ -34,7 +34,7 @@ const Signup = ({history, accountState, accountSetter}) => {
 
         
         if(invalid) {
-            console.log({missing_fields :accountState.form})
+            // console.log({missing_fields :accountState.form})
             setError({error: true, msg: "all fields must be filled"})
             return
         }
@@ -59,7 +59,7 @@ const Signup = ({history, accountState, accountSetter}) => {
             return
         }
         
-        console.log(form)
+        // console.log(form)
 
         context.server('register', form).then( resp => {
             if(resp.status) {

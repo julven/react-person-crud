@@ -47,7 +47,7 @@ let reduxAccountReducer = (state = reduxAccount, { type, payload }) => {
 				else if (x === 'alert') return;
 				else newState[x] = ""
 			})
-			console.log({clear: newState})
+			// console.log({clear: newState})
 			return newState;
 		case "ACCOUNT_FORM_CLEAR": 
 			form = { ...state.form}
@@ -67,7 +67,7 @@ let reduxAccountReducer = (state = reduxAccount, { type, payload }) => {
 				...state,
 				form
 			}
-			console.log({newState})
+			// console.log({newState})
 			return newState;
 		case "ACCOUNT_FORM_CHANGE": 
 			form = {...state.form }
