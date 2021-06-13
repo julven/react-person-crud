@@ -14,6 +14,7 @@ function App({ accountState, accountSetter }) {
   }
 
   useEffect( () => {
+    // console.log(process.env)
     try {
       let auth = JSON.parse(window.localStorage.auth)
       

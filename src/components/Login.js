@@ -30,7 +30,7 @@ const Login = ({ history, accountState, accountSetter }) => {
             return
         }
 
-        fetch("https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyCckDOJTTwPXgED9fozolWGla8snvSGBTo", {
+        fetch("https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key="+process.env.REACT_APP_FIREBASE_API_KEY, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({requestType: "PASSWORD_RESET", email: form.email})
